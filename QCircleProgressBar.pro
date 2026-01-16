@@ -10,15 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    calc.cpp
+    dialog.cpp \
+    qcircleprogressbar.cpp
 
 HEADERS += \
-    calc.h
+    dialog.h \
+    qcircleprogressbar.h
 
 FORMS += \
-    calc.ui
+    dialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES += \
+    images/resources.qrc
