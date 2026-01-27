@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QDateTime>
 #include <QMessageBox>
+#include <QLocale>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -84,13 +85,14 @@ void MainWindow::onOpen()
         return;
     }
 
+    QLocale locale;
     for (int i = 1; i <=7;i++)
     {
-        QStandardItem *item = new QStandardItem(QDate::shortDayName(i));
+        QStandardItem *item = new QStandardItem(locale.dayName(i, QLocale::ShortFormat));
         m -> setHorizontalHeaderItem(i - 1, item);
     }
     ui->priceView->horizontalHeader()->setMinimumSectionSize(100);
-    ui->priceView->horizontalHeader()->setResizeMode(QHeaderView::Fixed);
+    ui->priceView->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 
 
     for (int i = 0; i < m -> rowCount();i++)
