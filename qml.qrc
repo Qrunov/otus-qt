@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Qt_logo_2016.png</file>
+        <file>CircleProgress.qml</file>
+    </qresource>
+</RCC>
