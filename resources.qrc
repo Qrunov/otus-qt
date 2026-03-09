@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/qmlcandlestick/chart.qml</file>
+        <file>qml/qmlcandlestick/option.qml</file>
+        <file>qml/qmlcandlestick/waiting.qml</file>
+        <file>qml/qmlcandlestick/main.qml</file>
+    </qresource>
+</RCC>
