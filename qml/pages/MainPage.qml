@@ -1,98 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtQuick.LocalStorage 2.0
+import ".."
 
 Page {
     objectName: "mainPage"
-    allowedOrientations: Orientation.All
 
-
-    ListModel {
-        id: storageModel
-        property var db
-
-        function createDB(){
-            try{
-                db.transaction(function(tx) {
-                    tx.executeSql("create table if not exists note(id integer primary key autoincrement, note text not null);");
-                    console.log("database was successfully initialized");
-                });
-            }
-            catch(error){
-                console.error("Error local storage initialization:",error);
-            }
-        }
-        function updateData(){
-            clear()
-            try{
-                db.readTransaction(function(tx) {
-                    var res = tx.executeSql('select id,note from note order by id');
-                    for (var i = 0;i < res.rows.length; i++){
-                        append(res.rows.item(i))
-                    }
-                });
-            }
-            catch(error){
-                console.error("Error receiving data:",error);
-            }
-
-        }
-
-        function updateItem(id, note){
-            console.log("updating ", id)
-
-            try{
-                db.transaction(function(tx) {
-                    var res = tx.executeSql('update note set note = ? where id = ?',[note, id]);
-                    console.log("updating ok");
-                });
-            }
-            catch(error){
-                console.error("Error update data:",error);
-            }
-            updateData();
-        }
-
-
-
-        function addItem(note){
-            console.log("adding ", note)
-
-            try{
-                db.transaction(function(tx) {
-                    var res = tx.executeSql('insert into note(note) values(?)',[note]);
-                    console.log("inserting ok");
-                });
-            }
-            catch(error){
-                console.error("Error inserting data:",error);
-            }
-            updateData();
-
-        }
-
-        function deleteItem(id){
-            console.log("removing ", id)
-            try{
-                db.transaction(function(tx) {
-                    var res = tx.executeSql('delete from note where id = ?',[id]);
-                    console.log("removing ok");
-                });
-            }
-            catch(error){
-                console.error("Error inserting data:",error);
-            }
-            updateData();
-        }
-
-
-        Component.onCompleted: {
-            db = LocalStorage.openDatabaseSync("notes","1.0");
-            createDB();
-        }
+    StorageModel{
+        id: storage
     }
-
-
 
     SilicaListView {
         header: PageHeader {
@@ -100,26 +15,34 @@ Page {
             title: qsTr("Notes")
         }
         anchors.fill: parent
-        model: storageModel
+        model: storage
         delegate: ListItem {
-            Label {
+            Column{
                 x: Theme.horizontalPageMargin
-                text: note
+                Label {
+                    text: noteDate.toLocaleDateString(Qt.locale)
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                }
+                Label {
+                    text: note
+                }
             }
             menu: ContextMenu{
                 MenuItem{
                     text: qsTr("Изменить")
                     onClicked: {
-                        var dialog = pageStack.push(Qt.resolvedUrl("NoteDialog.qml"),{note: note})
+                        var dialog = pageStack.push(Qt.resolvedUrl("NoteDialog.qml"),{note: note, dt: noteDate})
                         dialog.accepted.connect(function () {
-                            storageModel.updateItem(id, dialog.note)
+                            storage.updateItem(index, dialog.note, dialog.dt)
                         })
 
                     }
                 }
                 MenuItem{
                     text: qsTr("Удалить")
-                    onClicked: storageModel.deleteItem(id)
+                    //onClicked: storage.deleteItem(id)
+                    onClicked: storage.deleteItem(index)
                 }
             }
         }
@@ -130,7 +53,7 @@ Page {
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("NoteDialog.qml"))
                     dialog.accepted.connect(function () {
-                        storageModel.addItem(dialog.note)
+                        storage.addItem(dialog.note, dialog.dt)
                     })
                 }
             }
