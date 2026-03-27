@@ -42,12 +42,12 @@
 <context>
     <name>LearningWordPage</name>
     <message>
-        <location filename="../qml/pages/LearningWordPage.qml" line="69"/>
+        <location filename="../qml/pages/LearningWordPage.qml" line="70"/>
         <source>Я не вспомнил слово</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LearningWordPage.qml" line="83"/>
+        <location filename="../qml/pages/LearningWordPage.qml" line="84"/>
         <source>Я вспомнил слово</source>
         <translation type="unfinished"></translation>
     </message>
@@ -55,7 +55,7 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="15"/>
+        <location filename="../qml/pages/MainPage.qml" line="16"/>
         <source>Тренажер английского языка</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68,17 +68,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="63"/>
+        <location filename="../qml/pages/MarkingWordPage.qml" line="64"/>
         <source>Пропустить</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="72"/>
+        <location filename="../qml/pages/MarkingWordPage.qml" line="73"/>
         <source>Я знаю слово</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="80"/>
+        <location filename="../qml/pages/MarkingWordPage.qml" line="82"/>
         <source>Добавить слово</source>
         <translation type="unfinished"></translation>
     </message>

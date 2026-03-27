@@ -54,6 +54,7 @@ BaseWordPage {
                 id: ignore
                 text: qsTr("Игнорировать")
                 onClicked: {
+                    db.deleteWord(m_marking.get(0).id)
                     m_marking.remove(0);
                     loadNextPage(m_marking, m_learning);
                 }
@@ -71,6 +72,7 @@ BaseWordPage {
                 id: aware
                 text: qsTr("Я знаю слово")
                 onClicked: {
+                    db.markWordKnown(m_marking.get(0).id)
                     m_marking.remove(0);
                     loadNextPage(m_marking, m_learning);
                 }
@@ -80,7 +82,11 @@ BaseWordPage {
                 text: qsTr("Добавить слово")
                 enabled: rus.length > 0
                 onClicked: {
+                    var m = m_marking.get(0);
+                    db.determineWord(m.id, rus.text)
+                    m_learning.append({en: m.en, ru: rus.text})
                     m_marking.remove(0);
+                    m_isLearning.isToggled = true;
                     loadNextPage(m_marking, m_learning);
                 }
             }
@@ -90,7 +96,7 @@ BaseWordPage {
     Component.onCompleted: {
         pageTitle = "Разметка слова"
         markingWord.markingClicked.connect(onMarkingButtonClicked);
-        en.text = m_marking.get(0)['en'];
+        en.text = m_marking.get(0).en;
     }
     function onMarkingButtonClicked(){
         loadNextPage(m_marking, m_learning);

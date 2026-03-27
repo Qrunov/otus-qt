@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.1
 
 BaseWordPage {
     id: learningWord
+    anchors.fill: parent
     Column{
         anchors.fill: parent
         Label{
@@ -24,7 +25,7 @@ BaseWordPage {
             icon.source: "image://theme/icon-l-add"
 
             onClicked:{
-                ru.text = m_learning.get(0)['ru']
+                ru.text = m_learning.get(0).ru
             }
             anchors{
                 left: parent.left
@@ -70,10 +71,10 @@ BaseWordPage {
                     anchors.fill: parent
                     anchors.margins: 10
                     wrapMode: Text.WordWrap
-                    font: fail.font
                 }
 
                 onClicked:{
+                    db.progressDown(m_learning.get(0).id)
                     m_learning.remove(0);
                     loadNextPage(m_marking, m_learning);
                 }
@@ -83,6 +84,7 @@ BaseWordPage {
                 text: qsTr("Я вспомнил слово")
                 height: parent / 2
                 onClicked: {
+                    db.progressUp(m_learning.get(0).id)
                     m_learning.remove(0);
                     loadNextPage(m_marking, m_learning)
                 }
@@ -93,7 +95,7 @@ BaseWordPage {
     Component.onCompleted: {
         pageTitle = "Изучение слова"
         learningWord.learningClicked.connect(onLearningButtonClicked)
-        en.text = m_learning.get(0)['en']
+        en.text = m_learning.get(0).en
     }
 
 

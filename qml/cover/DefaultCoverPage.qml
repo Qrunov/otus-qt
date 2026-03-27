@@ -7,9 +7,9 @@ CoverBackground {
     CoverTemplate {
         objectName: "applicationCover"
         primaryText: "App"
-        secondaryText: qsTr("Notes")
+        secondaryText: qsTr("Template")
         icon {
-            source: Qt.resolvedUrl("../icons/NoteApp.svg")
+            source: Qt.resolvedUrl("../icons/enlive.svg")
             sourceSize { width: icon.width; height: icon.height }
         }
     }

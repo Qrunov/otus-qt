@@ -1,10 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import ".."
 
 Page {
     id: word
     objectName: "base"
     default property alias content: contentArea.data
+    property StorageModel db
+    property var outerIndex
     property string pageTitle: "Заголовок"
 
     property var m_marking: ListModel
@@ -32,7 +35,7 @@ Page {
                     }
                     enabled: true
                     icon.color: isToggled ? Theme.highlightColor : Theme.primaryColor
-               }
+                }
                 IconButton {
                     id: learning
                     property bool isToggled: true
@@ -51,16 +54,15 @@ Page {
 
     function replacePage(url, u, l){
         if (pageStack.depth > 1)
-            pageStack.replace(Qt.resolvedUrl(url), {m_marking: u, m_learning: l, m_isMarking: marking.isToggled, m_isLearning: learning.isToggled});
+            pageStack.replace(Qt.resolvedUrl(url), {db: db, outerIndex:outerIndex, m_marking: u, m_learning: l, m_isMarking: marking.isToggled, m_isLearning: learning.isToggled});
         else
-            pageStack.push(Qt.resolvedUrl(url), {m_marking: u, m_learning: l, m_isMarking: true, m_isLearning: true});
+            pageStack.push(Qt.resolvedUrl(url), {db: db, outerIndex:outerIndex, m_marking: u, m_learning: l, m_isMarking: true, m_isLearning: true});
     }
 
 
     function loadNextPage(u, l)
     {
         var nextPage = "";
-        console.log(marking.enabled, pageStack.depth, u.count)
         if ((marking.isToggled || pageStack.depth === 1) && u.count > 0)
         {
             nextPage = "MarkingWordPage.qml";
@@ -76,7 +78,6 @@ Page {
     }
 
     Component.onCompleted: {
-        console.log("base Component.onCompleted");
         marking.enabled = (m_marking.count > 0);
         marking.isToggled = (marking.enabled && m_isMarking);
         learning.enabled = (m_learning.count > 0);
