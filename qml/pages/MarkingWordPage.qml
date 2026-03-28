@@ -28,6 +28,7 @@ BaseWordPage {
             font.pointSize: Theme.fontSizeExtraLarge
             height: parent.height / 3
             horizontalAlignment: "AlignHCenter"
+            inputMethodHints: Qt.ImhNoAutoUppercase
             anchors{
                 left: parent.left
                 right: parent.right
@@ -97,6 +98,7 @@ BaseWordPage {
         pageTitle = "Разметка слова"
         markingWord.markingClicked.connect(onMarkingButtonClicked);
         en.text = m_marking.get(0).en;
+        VirtualKeyboardSettings.activeLocales = ["ru_RU"];
     }
     function onMarkingButtonClicked(){
         loadNextPage(m_marking, m_learning);

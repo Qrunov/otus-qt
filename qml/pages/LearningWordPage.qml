@@ -22,7 +22,7 @@ BaseWordPage {
         }
         IconButton{
             id: reveal
-            icon.source: "image://theme/icon-l-add"
+            icon.source: "image://theme/icon-l-down"
 
             onClicked:{
                 ru.text = m_learning.get(0).ru
@@ -47,45 +47,56 @@ BaseWordPage {
                 top: reveal.bottom
             }
         }
-        GridLayout{
+        GridLayout {
             id: btns1
             columns: 2
             rowSpacing: 20
             columnSpacing: 20
 
-            anchors{
+            anchors {
                 left: parent.left
                 right: parent.right
                 top: ru.bottom
-                leftMargin: 20
-                rightMargin: 10
                 bottom: parent.bottom
+                leftMargin: 20
+                rightMargin: 20
             }
-
-            Button{
+            Button {
                 id: fail
-                //text: qsTr("Я не вспомнил слово")
-                height: parent / 2
-                Label{
-                    text: qsTr("Я не вспомнил слово")
-                    anchors.fill: parent
-                    anchors.margins: 10
-                    wrapMode: Text.WordWrap
-                }
+                Layout.fillWidth: true
+                Layout.preferredHeight: implicitHeight
 
-                onClicked:{
+                Label {
+                    text: qsTr("Я не вспомнил слово")
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    width: parent.width
+                    anchors.centerIn: parent
+                }
+                onClicked: {
                     db.progressDown(m_learning.get(0).id)
-                    m_learning.remove(0);
-                    loadNextPage(m_marking, m_learning);
+                    m_learning.remove(0)
+                    loadNextPage(m_marking, m_learning)
                 }
             }
-            Button{
+
+            Button {
                 id: success
-                text: qsTr("Я вспомнил слово")
-                height: parent / 2
+                Layout.fillWidth: true
+                Layout.preferredHeight: implicitHeight
+                Label {
+                    text: qsTr("Я вспомнил слово")
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    width: parent.width
+                    anchors.centerIn: parent
+                }
+
                 onClicked: {
                     db.progressUp(m_learning.get(0).id)
-                    m_learning.remove(0);
+                    m_learning.remove(0)
                     loadNextPage(m_marking, m_learning)
                 }
             }
@@ -93,7 +104,7 @@ BaseWordPage {
     }
 
     Component.onCompleted: {
-        pageTitle = "Изучение слова"
+        pageTitle = "Запоминание слова"
         learningWord.learningClicked.connect(onLearningButtonClicked)
         en.text = m_learning.get(0).en
     }
