@@ -7,7 +7,7 @@ Page {
 
     PageHeader {
         objectName: "pageHeader"
-        title: qsTr("Введите учетные данные")
+        title: qsTr("Input account information")
         extraContent.children: [
             IconButton {
                 objectName: "aboutButton"
@@ -25,8 +25,8 @@ Page {
         TextField {
             id: login
             width: parent.width
-            placeholderText: qsTr("Логин")
-            label: qsTr("Логин")
+            placeholderText: qsTr("Login")
+            label: qsTr("Login")
             inputMethodHints: Qt.ImhNoAutoUppercase
             validator: RegExpValidator {
                 id: loginValidator
@@ -40,8 +40,8 @@ Page {
         TextField {
             id: phone
             width: parent.width
-            placeholderText: qsTr("Телефон")
-            label: qsTr("Телефон")
+            placeholderText: qsTr("Telephone number")
+            label: qsTr("Telephone number")
             validator: RegExpValidator { regExp: /^(\+7|8)?[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/ }
             EnterKey.enabled: !errorHighlight
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -51,7 +51,7 @@ Page {
             width: parent.width
             id: enter
             enabled: phone.text.length && login.text.length && phone.acceptableInput && login.acceptableInput
-            text: qsTr("Далее")
+            text: qsTr("Next")
             onClicked: {
                 pageStack.push(Qt.resolvedUrl("AccountPage.qml"))
             }

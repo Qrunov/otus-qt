@@ -35,66 +35,71 @@
     <name>AccountPage</name>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="12"/>
-        <source>Данные аккаунта</source>
+        <source>Account information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="30"/>
         <location filename="../qml/pages/AccountPage.qml" line="31"/>
-        <source>Фамилия</source>
+        <source>Last name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="40"/>
         <location filename="../qml/pages/AccountPage.qml" line="41"/>
-        <source>Имя</source>
+        <source>First name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="50"/>
         <location filename="../qml/pages/AccountPage.qml" line="51"/>
-        <source>Отчество</source>
+        <source>Middle name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="58"/>
         <location filename="../qml/pages/AccountPage.qml" line="59"/>
-        <source>Темы</source>
+        <source>Topics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="68"/>
-        <source>Почта(username@mail.ru)</source>
+        <source>Mail(username@mail.ru)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="69"/>
-        <source>Почта</source>
+        <source>Mail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="81"/>
-        <source>Я даю согласие на обработку персональных данных</source>
+        <source>I agree to data processing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="82"/>
-        <source>Я не даю согласия на обработку персональных данных</source>
+        <source>I NOT agree to data processing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="88"/>
-        <source>Я даю согласие на рассылку уведомлений</source>
+        <source>I agree to receive notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="89"/>
-        <source>Я не даю согласия на рассылку уведомлений</source>
+        <source>I NOT agree to receive notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AccountPage.qml" line="97"/>
-        <source>Регистрация</source>
+        <source>Registration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AccountPage.qml" line="99"/>
+        <source>Account successfuly registered! </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -110,24 +115,24 @@
     <name>MainPage</name>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="10"/>
-        <source>Введите учетные данные</source>
+        <source>Input account information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="28"/>
         <location filename="../qml/pages/MainPage.qml" line="29"/>
-        <source>Логин</source>
+        <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="43"/>
         <location filename="../qml/pages/MainPage.qml" line="44"/>
-        <source>Телефон</source>
+        <source>Telephone number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="54"/>
-        <source>Далее</source>
+        <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

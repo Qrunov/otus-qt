@@ -9,7 +9,7 @@ Page {
     PageHeader {
         id: ph
         objectName: "pageHeader"
-        title: qsTr("Данные аккаунта")
+        title: qsTr("Account information")
         extraContent.children: [
             IconButton {
                 objectName: "aboutButton"
@@ -27,8 +27,8 @@ Page {
         TextField {
             id: soname
             width: parent.width
-            placeholderText: qsTr("Фамилия")
-            label: qsTr("Фамилия")
+            placeholderText: qsTr("Last name")
+            label: qsTr("Last name")
             font.bold: true
             acceptableInput: text.length > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -37,8 +37,8 @@ Page {
         TextField {
             id: name
             width: parent.width
-            placeholderText: qsTr("Имя")
-            label: qsTr("Имя")
+            placeholderText: qsTr("First name")
+            label: qsTr("First name")
             font.bold: true
             acceptableInput: text.length > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -47,16 +47,16 @@ Page {
         TextField {
             id: secondName
             width: parent.width
-            placeholderText: qsTr("Отчество")
-            label: qsTr("Отчество")
+            placeholderText: qsTr("Middle name")
+            label: qsTr("Middle name")
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: topic.focus = true
         }
         TextField {
             id: topic
             width: parent.width
-            placeholderText: qsTr("Темы")
-            label: qsTr("Темы")
+            placeholderText: qsTr("Topics")
+            label: qsTr("Topics")
             inputMethodHints: Qt.ImhNoAutoUppercase
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: mail.focus = true
@@ -65,8 +65,8 @@ Page {
         TextField {
             id: mail
             width: parent.width
-            placeholderText: qsTr("Почта(username@mail.ru)")
-            label: qsTr("Почта")
+            placeholderText: qsTr("Mail(username@mail.ru)")
+            label: qsTr("Mail")
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             inputMethodHints: Qt.ImhNoAutoUppercase
             validator: RegExpValidator {
@@ -78,15 +78,15 @@ Page {
         TextSwitch {
             id: acceptCheck
             width: page.width
-            text: checked ? qsTr("Я даю согласие на обработку персональных данных") :
-                            qsTr("Я не даю согласия на обработку персональных данных")
+            text: checked ? qsTr("I agree to data processing") :
+                            qsTr("I NOT agree to data processing")
             checked: false
         }
 
         TextSwitch {
             width: page.width
-            text: checked ? qsTr("Я даю согласие на рассылку уведомлений") :
-                            qsTr("Я не даю согласия на рассылку уведомлений")
+            text: checked ? qsTr("I agree to receive notifications") :
+                            qsTr("I NOT agree to receive notifications")
             checked: true
         }
 
@@ -94,9 +94,9 @@ Page {
             width: parent.width
             id: enter
             enabled: acceptCheck.checked && soname.length > 0 && name.length > 0
-            text: qsTr("Регистрация")
+            text: qsTr("Registration")
             onClicked: {
-                status.text = "Аккаунт успешно зарегистрирован!"
+                status.text = qsTr("Account successfuly registered! ")
                 delayTimer.start()
             }
         }
