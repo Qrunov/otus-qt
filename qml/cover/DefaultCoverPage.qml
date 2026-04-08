@@ -9,7 +9,7 @@ CoverBackground {
         primaryText: "App"
         secondaryText: qsTr("Template")
         icon {
-            source: Qt.resolvedUrl("../icons/enlive.svg")
+            source: Qt.resolvedUrl("../icons/dbus.svg")
             sourceSize { width: icon.width; height: icon.height }
         }
     }

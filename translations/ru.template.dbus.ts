@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.1" language="en">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="20"/>
         <source>About Application</source>
-        <translation>О приложении</translation>
+        <translation>About Application</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>#descriptionText</source>
-        <translation>&lt;p&gt;Короткое описание моего приложения для ОС Аврора&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;ex9&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>3-Clause BSD License</source>
-        <translation>Лицензия 3-Clause BSD</translation>
+        <translation>3-Clause BSD License</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
@@ -36,50 +36,19 @@
     <message>
         <location filename="../qml/cover/DefaultCoverPage.qml" line="10"/>
         <source>Template</source>
-        <translation>Шаблон</translation>
-    </message>
-</context>
-<context>
-    <name>LearningWordPage</name>
-    <message>
-        <location filename="../qml/pages/LearningWordPage.qml" line="70"/>
-        <source>Я не вспомнил слово</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/LearningWordPage.qml" line="84"/>
-        <source>Я вспомнил слово</source>
-        <translation type="unfinished"></translation>
+        <translation>Template</translation>
     </message>
 </context>
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="16"/>
-        <source>Тренажер английского языка</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MarkingWordPage</name>
-    <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="55"/>
-        <source>Игнорировать</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/pages/MainPage.qml" line="14"/>
+        <source>Template</source>
+        <translation>Template</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="64"/>
-        <source>Пропустить</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="73"/>
-        <source>Я знаю слово</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MarkingWordPage.qml" line="82"/>
-        <source>Добавить слово</source>
+        <location filename="../qml/pages/MainPage.qml" line="34"/>
+        <source>Разрешение экрана: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

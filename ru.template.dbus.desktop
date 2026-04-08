@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.template.dbus
+Exec=/usr/bin/ru.template.dbus
+Name=Template
+Name[ru]=Шаблон
+
+[X-Application]
+Permissions=DeviceInfo
+OrganizationName=ru.template
+ApplicationName=dbus
+ExecDBus=/usr/bin/ru.template.dbus

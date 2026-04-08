@@ -1,5 +1,5 @@
-Name:       ru.template.enlive
-Summary:    Моё приложения для ОС Аврора
+Name:       ru.template.dbus
+Summary:    My Aurora OS Application
 Version:    0.1
 Release:    1
 License:    BSD-3-Clause
@@ -13,7 +13,7 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 
 %description
-Короткое описание моего приложения для ОС Аврора
+ex9
 
 %prep
 %autosetup
